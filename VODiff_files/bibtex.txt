@@ -1,0 +1,7 @@
+@inproceedings{liang2025vodiff,
+  title={VODiff: Controlling Object Visibility Order in Text-to-Image Generation},
+  author={Liang, Dong and Jia, Jinyuan and Liu, Yuhao and Ke, Zhanghan and Fu, Hongbo and Lau, Rynson WH},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={18379--18389},
+  year={2025}
+}

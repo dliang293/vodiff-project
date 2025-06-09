@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VODiff: Controlling Object Visibility Order in Text-to-Image Generation</title>
+  <link href="./VODiff_files/style.css" rel="stylesheet">
+  <script type="text/javascript" src="./VODiff_files/jquery.mlens-1.0.min.js"></script>
+  <script type="text/javascript" src="./VODiff_files/jquery.js"></script>
+</head>
+<body>
+
+<!-- ======================== HEADER: Title, Authors, Links ======================= -->
+<div class="content">
+  <h1><strong>VODiff: Controlling Object Visibility Order in Text-to-Image Generation</strong></h1>
+
+  <!-- Author information, modify as needed -->
+  <p id="authors">
+    <!-- Example: Add homepage links if available -->
+    <a href="#">Dong Liang<sup>1,2</sup></a>
+    <a href="#">Jinyuan Jia<sup>1,3,†</sup></a>
+    <a href="#">Yuhao Liu<sup>2,†</sup></a>
+    <a href="#">Zhanghan Ke<sup>2</sup></a>
+    <a href="#">Hongbo Fu<sup>4</sup></a>
+    <a href="#">Rynson W.H. Lau<sup>2,†</sup></a>
+    <br>
+    <!-- Author affiliations and contact. Modify as needed -->
+    <span style="font-size: 18px;">
+      <sup>1</sup>Tongji University, <sup>2</sup>City University of Hong Kong, <sup>3</sup>HKUST(GZ), <sup>4</sup>HKUST <br>
+      <span style="font-size: 15px;"></span>
+    </span>
+  </p>
+  <br>
+
+  <!-- =================== TEASER IMAGE ===================== -->
+  <!-- Replace the src below with your teaser or main result image -->
+  <img src="./VODiff_files/teaser.png" class="teaser-gif" style="width:100%;">
+
+  <h3 style="text-align:center"><em>
+    <!-- One-sentence project slogan or highlight, modify as you like -->
+    "A new approach for controlling object occlusion and spatial arrangement in text-to-image generation."
+  </em></h3>
+
+  <!-- =================== PAPER / CODE / BIBTEX LINKS =================== -->
+  <font size="+2">
+    <p style="text-align: center;">
+      <!-- Update these links to your actual paper/code/BibTeX if available -->
+      <a href="https://openaccess.thecvf.com/content/CVPR2025/papers/Liang_VODiff_Controlling_Object_Visibility_Order_in_Text-to-Image_Generation_CVPR_2025_paper.pdf" target="_blank">[Paper]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="https://github.com/dliang293/vodiff" target="_blank">[Code]</a> &nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="./VODiff_files/bibtex.txt" target="_blank">[BibTeX]</a>
+    </p>
+  </font>
+</div>
+
+<!-- ======================== ABSTRACT ======================= -->
+<div class="content">
+  <h2 style="text-align:center;">Abstract</h2>
+  <p>
+    <!-- Paste your abstract here -->
+    Recent advancements in diffusion models have significantly enhanced the performance of text-to-image models in image synthesis. To enable control over the spatial locations of generated objects, diffusion-based methods typically utilize object layout as an auxiliary input. However, such methods treat all objects as being on the same layer, neglecting their visibility order, which leads to incorrect occlusions. To address this, we introduce a new training-free framework—VODiff—which considers object visibility order explicitly and allows users to place overlapping objects in a stack of layers. Our framework consists of a Sequential Denoising Process (SDP) and a novel Visibility-Order-Aware (VOA) Loss. Together, these designs enable VODiff to generate photorealistic images that satisfy user-specified spatial constraints and object occlusion relationships. We also introduce VOBench, a new benchmark dataset, and demonstrate the superiority of our approach through extensive experiments.
+  </p>
+</div>
+
+<!-- ======================== APPROACH ======================= -->
+<div class="content">
+  <h2>Approach</h2>
+  <p>
+    <!-- Summarize your method main idea -->
+    Our framework introduces <b>two visibility-based designs</b>:
+    <ul>
+      <li><b>Sequential Denoising Process (SDP):</b> Divides image generation into multiple stages for each object according to user-specified visibility order.</li>
+      <li><b>Visibility-Order-Aware (VOA) Loss:</b> Transforms layout and occlusion constraints into an attention map optimization process to improve occlusion synthesis in complex scenes.</li>
+    </ul>
+    <b>Framework Overview:</b>
+  </p>
+  <!-- ======= Insert your main method overview/framework image here ======= -->
+  <img class="summary-img" src="./VODiff_files/pipeline.png" style="width:100%;">
+  <p>
+    <b>Sequential Denoising Process (SDP):</b> Assigns each object to a layer and generates objects one-by-one from bottom to top, maintaining spatial and occlusion relationships.<br>
+    <b>Visibility-Order-Aware Loss (VOA):</b> Divides object masks into overlapping, visible, and background regions and applies region-specific attention constraints to guide denoising.
+  </p>
+
+</div>
+
+<!-- ======================== RESULTS ======================= -->
+<div class="content">
+  <h2>Results</h2>
+  <p>
+    <!-- Briefly describe what your results show, and what the images/tables mean -->
+  </p>
+  <!-- ========== Insert your qualitative results/comparison image here ========== -->
+  <img class="summary-img" src="./VODiff_files/result.png" style="width:100%;">
+  <br>
+  <!-- ========== Insert your quantitative table/metrics screenshot here ========== -->
+  VODiff under the SDXL backbone. <br>
+  <img class="summary-img" src="./VODiff_files/sdxl_result.png" style="width:100%;">
+</div>
+
+<!-- ======================== BIBTEX ======================= -->
+<div class="content">
+  <h2>BibTeX</h2>
+  <code>
+    @inproceedings{liang2025vodiff,<br>
+    &nbsp;&nbsp;title={VODiff: Controlling Object Visibility Order in Text-to-Image Generation},<br>
+    &nbsp;&nbsp;author={Liang, Dong and Jia, Jinyuan and Liu, Yuhao and Ke, Zhanghan and Fu, Hongbo and Lau, Rynson WH},<br>
+    &nbsp;&nbsp;booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},<br>
+    &nbsp;&nbsp;pages={18379--18389},<br>
+    &nbsp;&nbsp;year={2025}<br>
+    }
+  </code>
+</div>
+
+
+</body>
+</html>
